@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/pantalla inicial.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Cinematica.unity
+    guid: 01e6ab5258f13354dacea807e4ca0b8f
+  - enabled: 1
+    path: Assets/Scenes/cuarto s.unity
+    guid: b1d17df0fff17714388aefef8d64ac16
+  - enabled: 1
+    path: Assets/Scenes/circo.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/camerino.unity
+    guid: 5028f0a0fa5a21842a80058349358877
+  - enabled: 1
+    path: Assets/Scenes/ajustes.unity
+    guid: 4cb489c8c19049c4d83b765799db1225
+  - enabled: 1
+    path: Assets/Scenes/audio.unity
+    guid: 891eb09f1631eb7449db07121fc4eaa7
+  - enabled: 1
+    path: Assets/Scenes/guardar.unity
+    guid: d43e6d995c685de439931d262d958e0d
+  - enabled: 1
+    path: Assets/Scenes/2cinematica.unity
+    guid: f50e05e17fdfb1049b301ac3df6b8001
+  - enabled: 1
+    path: Assets/Scenes/resolucion.unity
+    guid: 151432f789e1555499b2ef4fdd61443c
+  - enabled: 1
+    path: Assets/Scenes/GAME OVER.unity
+    guid: 64ec9f970ab65b847a0b9325969f2d42
+  m_configObjects: {}

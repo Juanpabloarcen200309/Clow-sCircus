@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class PersistentObject : MonoBehaviour
 {
     private static PersistentObject instance;
-    public string lastSceneName = "2cinematica"; // Cambia esto por el nombre real
+
+    // Lista de escenas donde el objeto debe destruirse
+    public string[] prohibitedScenes = { "2cinematica", "ajustes", "resolucion", "audio", "Cinematica", "pantalla inicial" }; // Agrega las escenas necesarias
 
     void Awake()
     {
-        if (SceneManager.GetActiveScene().name == lastSceneName)
+        if (IsProhibitedScene(SceneManager.GetActiveScene().name))
         {
             Destroy(gameObject);
             return;
@@ -27,7 +29,7 @@ public class PersistentObject : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == lastSceneName)
+        if (IsProhibitedScene(scene.name))
         {
             Destroy(gameObject);
         }
@@ -43,7 +45,19 @@ public class PersistentObject : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // 📌 Nuevo método para resetear posición del jugador y cámara
+    // Método para verificar si la escena está en la lista prohibida
+    private bool IsProhibitedScene(string sceneName)
+    {
+        foreach (string prohibitedScene in prohibitedScenes)
+        {
+            if (sceneName == prohibitedScene)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void ResetPosition(Vector3 nuevaPosicion, Quaternion nuevaRotacion)
     {
         Transform jugador = transform.Find("Capsule"); // Ajusta si tu jugador tiene otro nombre
